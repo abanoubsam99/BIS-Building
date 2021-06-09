@@ -9,7 +9,7 @@ AddshowAlertDialog({BuildContext context,String erorrtext}) {
 
   // set up the AlertDialog
   AlertDialog alert = AlertDialog(
-    title: Center(child: Text("SignUp Error")),
+    title: Center(child: Text("Add Building Error",style: TextStyle(color: Colors.red),)),
     content: Text(erorrtext),
     actions: [
       okButton,
@@ -37,7 +37,7 @@ CheckshowAlertDialog(BuildContext context,String errormessage) {
 
   // set up the AlertDialog
   AlertDialog alert = AlertDialog(
-    title: Center(child: Text("Check Error")),
+    title: Center(child: Text("Add Building Error",style: TextStyle(color: Colors.red),)),
     content: Text("Please choose "+errormessage),
     actions: [
       okButton,

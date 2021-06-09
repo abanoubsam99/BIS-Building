@@ -91,8 +91,8 @@ showAlertDialog(BuildContext context) {
 
   // set up the AlertDialog
   AlertDialog alert = AlertDialog(
-    title: Center(child: Text("login Error")),
-    content: Text("Please check email / phone number or password"),
+    title: Center(child: Text("Login Error",style: TextStyle(color: Colors.red),)),
+    content: Text("Please Check Email / Phone Number or Password"),
     actions: [
       okButton,
     ],

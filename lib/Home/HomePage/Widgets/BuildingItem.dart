@@ -6,7 +6,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 class BuildingItem extends StatefulWidget {
   int DepartmentID;
-  BuildingItem({@required this.DepartmentID});
+  String DepartmentName;
+  BuildingItem({@required this.DepartmentID,@required this.DepartmentName});
 
   @override
   _BuildingItemState createState() => _BuildingItemState();
@@ -34,7 +35,7 @@ class _BuildingItemState extends State<BuildingItem> {
   Widget build(BuildContext context) {
    return _loading ?
    Center(child: CircularProgressIndicator(backgroundColor: Theme.of(context).primaryColor,),)
-       : _announcementModel.data.isEmpty? Container(child: Center(child: Text("No advertisement has been added yet"),),)
+       : _announcementModel.data.isEmpty? Container(child: Center(child: Text("No " +  widget.DepartmentName + " Has Been Added Yet"),),)
        :Container(
           width: MediaQuery
               .of(context)
@@ -139,7 +140,7 @@ class _BuildingItemState extends State<BuildingItem> {
                           Positioned(
                             top: 10,
                             right: 10,
-                            child: Text(_announcementModel.data[index].area,
+                            child: Text(_announcementModel.data[index].area +" M",
                                 style: TextStyle(
                                     color: Colors.white, fontSize: 18)
                             ),

@@ -5,7 +5,8 @@ import 'package:flutter/material.dart';
 class MyBuildingItem extends StatefulWidget {
   String title,image,phonen,description,location,size,status,name,creationDate;
   double price;
-  MyBuildingItem({@required this.title,@required this.size,@required this.description,@required this.image, @required this.location,@required this.phonen,@required this.price,@required this.status,@required this.name,@required this.creationDate});
+  Function deletel;
+  MyBuildingItem({@required this.deletel,@required this.title,@required this.size,@required this.description,@required this.image, @required this.location,@required this.phonen,@required this.price,@required this.status,@required this.name,@required this.creationDate});
 
   @override
   _MyBuildingItemState createState() => _MyBuildingItemState();
@@ -73,7 +74,7 @@ class _MyBuildingItemState extends State<MyBuildingItem> {
                     Positioned(
                       top: 0,
                       left: 0,
-                      child: IconButton(icon: Icon(Icons.close,color: Colors.red), onPressed: (){})
+                      child: IconButton(icon: Icon(Icons.close,color: Colors.red), onPressed: widget.deletel)
                     ),
                     Positioned(
                       top: 10,
@@ -85,13 +86,13 @@ class _MyBuildingItemState extends State<MyBuildingItem> {
                               color: Colors.white.withOpacity(.85),
                               borderRadius: BorderRadius.circular(50)
                           ),
-                          child: Center(child: Text("Sale", style: TextStyle(color: Color(getColorHexFromStr("#A8943D")),fontSize: 18),),
+                          child: Center(child: Text(widget.status, style: TextStyle(color: Color(getColorHexFromStr("#A8943D")),fontSize: 18),),
                           )),
                     ),
                     Positioned(
                       top: 10,
                       right: 10,
-                      child: Text("120 M", style: TextStyle(color: Colors.white,fontSize: 18)
+                      child: Text(widget.size +" M", style: TextStyle(color: Colors.white,fontSize: 18)
                       ),
                     )
                   ],),

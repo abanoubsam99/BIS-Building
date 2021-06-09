@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 
-
-class CustomTextfild extends StatelessWidget {
+class AddTextfild extends StatelessWidget {
   String hint;
   IconData icon;
+  int maxLines;
   TextInputType textInputType;
   final Function onclick;
-  int maxLines;
   String _errorMessage(String error) {
     switch (hint) {
       case "Title":
@@ -19,11 +18,13 @@ class CustomTextfild extends StatelessWidget {
         return "You Should Enter Address";
       case "Area":
         return "You Should Enter Area";
+      case "Details":
+        return "You Should Enter Details";
 
     }
   }
 
-  CustomTextfild({
+  AddTextfild({
     @required this.hint,
     @required this.icon,
     @required this.onclick,
@@ -33,7 +34,7 @@ class CustomTextfild extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 10,right: 10,top: 5,bottom: 5),
+      padding: const EdgeInsets.only(left: 20,right: 20,top: 10,bottom: 10),
       child: Directionality(
         textDirection: TextDirection.ltr,
         child: TextFormField(
@@ -48,8 +49,6 @@ class CustomTextfild extends StatelessWidget {
           decoration: InputDecoration(
             filled: true,
             fillColor: Colors.white,
-            alignLabelWithHint: true,
-            prefixIcon: Icon(icon,color: Theme.of(context).primaryColor,size: 35,),
             errorBorder: OutlineInputBorder(
               borderRadius: BorderRadius.only(topLeft: Radius.circular(10),bottomLeft: Radius.circular(10),bottomRight: Radius.circular(10)),
               borderSide: BorderSide(
@@ -64,6 +63,8 @@ class CustomTextfild extends StatelessWidget {
             ) ,
             labelText: hint,
             hintText: "Enter "+hint,
+            alignLabelWithHint: true,
+            prefixIcon: Icon(icon,color: Theme.of(context).primaryColor,),
             hintStyle:  TextStyle(color: Colors.grey,fontSize: 17),
             labelStyle: TextStyle(color: Theme.of(context).primaryColor,fontSize: 17,fontWeight: FontWeight.bold),
             enabledBorder: OutlineInputBorder(
@@ -87,4 +88,3 @@ class CustomTextfild extends StatelessWidget {
     );
   }
 }
-

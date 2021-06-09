@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:bis_building/Home/HomeScreen.dart';
+import 'package:bis_building/Login/LoginScreen.dart';
 import 'package:bis_building/Login/Model/LoginModel.dart';
 import 'package:bis_building/Login/Widgets/LoginItem.dart';
 import 'package:bis_building/Sign%20up/Model/SignUpModel.dart';
@@ -29,7 +30,7 @@ class SignUpControler {
           context,
           MaterialPageRoute(
               builder: (context) =>
-                  HomeScreen()));
+                  LoginScreen()));
     }else{
       SignUpshowAlertDialog(
         context: context,

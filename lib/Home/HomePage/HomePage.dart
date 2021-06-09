@@ -85,12 +85,12 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
         ),
       ),
       body: TabBarView(controller: _tabController, children: [
-        BuildingItem(DepartmentID: 1,),
-        BuildingItem(DepartmentID: 2,),
-        BuildingItem(DepartmentID: 3,),
-        BuildingItem(DepartmentID: 4,),
-        BuildingItem(DepartmentID: 5,),
-        BuildingItem(DepartmentID: 6,),
+        BuildingItem(DepartmentID: 1,DepartmentName:"Apartments" ,),
+        BuildingItem(DepartmentID: 2,DepartmentName:"Chalets" ),
+        BuildingItem(DepartmentID: 3,DepartmentName:"Agricultural land" ),
+        BuildingItem(DepartmentID: 4,DepartmentName:"Shops" ),
+        BuildingItem(DepartmentID: 5,DepartmentName:"Villas" ),
+        BuildingItem(DepartmentID: 6,DepartmentName:"Condominium" ),
 
       ]),
 
